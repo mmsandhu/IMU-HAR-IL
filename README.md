@@ -45,22 +45,39 @@ Repetition_4
 Each subfolder contains 18 subfolders corresponding to each activity.
 
 Brush_teeth
+
 Dressing_1
+
 Dressing_2
+
 Drink
+
 Eat
+
 Kitchen_bin
+
 Lay
+
 Lay_sit
+
 Medicine
+
 Prepare_meal
+
 Shower
+
 Sit
+
 Sit_stand
+
 Stairs
+
 Stand
+
 Use_toilet
+
 Walk
+
 Wash_face
 
 Each subfolder contains 30 CSV files containing data from 30 IMU sensors (11 on the body and 19 on various objects in the home).
