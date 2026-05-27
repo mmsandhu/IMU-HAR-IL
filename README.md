@@ -155,7 +155,7 @@ IMU data:
 `Activity_label`: A unique number to identify the activity.
 
 
-**Raw Data Status:** This is raw data segmented into 18 activities (break period were removed).
+**Raw Data Status:** This is raw data segmented into 18 activities (break periods were removed).
 
 **Preprocessing Steps:**
 
