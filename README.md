@@ -80,37 +80,66 @@ Walk
 
 Wash_face
 
-Each subfolder contains 30 CSV files containing data from 30 IMU sensors (11 on the body and 19 on various objects in the home).
+**Each subfolder contains 30 CSV files containing data from 30 IMU sensors (11 on the body and 19 on various objects in the home).**
 
 bedroom_bed.csv
+
 bedroom_glass.csv
+
 bedroom_hanger.csv
+
 bedroom_med.csv
+
 Body-LLG.csv
+
 Body-LSH.csv
+
 Body-LTH.csv
+
 Body-LUA.csv
+
 Body-LW.csv
+
 Body-RLG.csv
+
 Body-RSH.csv
+
 Body-RTH.csv
+
 Body-RUA.csv
+
 Body-RW.csv
+
 Body-WT.csv
+
 kitchen_bin.csv
+
 kitchen_chair.csv
+
 kitchen_glass.csv
+
 kitchen_jam.csv
+
 kitchen_knife.csv
+
 kitchen_plate.csv
+
 kitchen_table.csv
+
 kitchen_tap.csv
+
 kitchen_toaster.csv
+
 toilet_brush.csv
+
 toilet_facewash.csv
+
 toilet_paste.csv
+
 toilet_seat.csv
+
 toilet_shower.csv
+
 toilet_tap.csv
 
 **File Formats:** CSV for time-series data
