@@ -22,13 +22,16 @@ Dataset Structure:
 
 **The data is organised in 50 folders (for 50 participants):**
 
+
 P01
 P02
 .
 .
 P50
 
+
 **Each folder has 3-4 subfolders (for each repetition):**
+
 
 Repetition_1
 Repetition_2
