@@ -143,11 +143,17 @@ toilet_shower.csv
 toilet_tap.csv
 
 **File Formats:** CSV for time-series data
+
 IMU data:
+
 `Euler_X`, `Euler_Y`, `Euler_Z`: 3D orientation 
+
 `Acc_X`, `Acc_Y`, `Acc_Z`: 3D acceleration 
+
 `Gyr_X`, `Gyr_Y`, `Gyr_Z`: Angular velocity around the three spatial axes—pitch, roll, and yaw.
+
 `Activity_label`: A unique number to identify the activity.
+
 
 **Raw Data Status:** This is raw data segmented into 18 activities (break period were removed).
 
