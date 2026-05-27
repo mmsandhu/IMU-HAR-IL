@@ -42,7 +42,7 @@ Repetition_3
 Repetition_4
 
 
-Each subfolder contains 18 subfolders corresponding to each activity.
+**Each subfolder contains 18 subfolders corresponding to each activity.**
 
 Brush_teeth
 
