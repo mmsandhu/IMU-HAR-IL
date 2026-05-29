@@ -415,7 +415,7 @@ X_train_area, X_test_area, y_train_area, y_test_area = (
 
 # =========================================================
 # RANDOM FOREST:
-# 18 ACTIVITY RECOGNITION
+# 17 ACTIVITY RECOGNITION
 # =========================================================
 
 activity_rf = RandomForestClassifier(
@@ -451,7 +451,7 @@ activity_f1 = f1_score(
 )
 
 print("\n================================")
-print("18 Activity Recognition Results")
+print("17 Activity Recognition Results")
 print("================================")
 
 print(f'Accuracy : {activity_accuracy:.4f}')
