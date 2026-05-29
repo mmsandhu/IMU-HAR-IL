@@ -17,7 +17,7 @@ from sklearn.metrics import accuracy_score, f1_score
 
 SAMPLING_RATE = 60              # Hz
 WINDOW_SEC = 3                  # seconds
-WINDOW_SIZE = SAMPLING_RATE * WINDOW_SEC   # 300 samples
+WINDOW_SIZE = SAMPLING_RATE * WINDOW_SEC   # 180 samples
 OVERLAP = 0.5
 STEP_SIZE = int(WINDOW_SIZE * (1 - OVERLAP))
 
