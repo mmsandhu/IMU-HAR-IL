@@ -159,7 +159,7 @@ IMU data:
 
 **Preprocessing Steps:**
 
-**Segmentation:** Data was segmented into 5 activities and break periods were removed.
+**Segmentation:** Data was segmented into distinct activities and break periods were removed.
 
 
 
