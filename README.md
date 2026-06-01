@@ -9,7 +9,7 @@ Xsens DOT (https://www.xsens.com/wearables/xsens-dot)
 
 All data stored at **60 Hz.**
 
-**Sensor deployment:** 11 ob body and 19 on different objects in the home
+**Sensor deployment:** 11 on body and 19 on different objects in the home
 
 **Collection Period:** From June 2024 to Sep 2024
 
