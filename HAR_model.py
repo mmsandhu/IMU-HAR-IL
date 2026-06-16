@@ -16,8 +16,8 @@ from sklearn.metrics import accuracy_score, f1_score
 # =========================================================
 
 SAMPLING_RATE = 60              # Hz
-WINDOW_SEC = 3                  # seconds
-WINDOW_SIZE = SAMPLING_RATE * WINDOW_SEC   # 180 samples
+WINDOW_SEC = 1                  # seconds
+WINDOW_SIZE = SAMPLING_RATE * WINDOW_SEC   # 60 samples
 OVERLAP = 0.5
 STEP_SIZE = int(WINDOW_SIZE * (1 - OVERLAP))
 
@@ -25,7 +25,7 @@ STEP_SIZE = int(WINDOW_SIZE * (1 - OVERLAP))
 # DATASET PATH
 # =========================================================
 
-dataset_path = path
+dataset_path = 'C:/work/'
 
 # =========================================================
 # REPETITIONS
@@ -68,7 +68,6 @@ activities = [
 
 area_mapping = {}
 
-
 for i in range(7):
     area_mapping[activities[i]] = 'Area_1'
 
@@ -84,6 +83,7 @@ area_mapping[activities[16]] = 'Area_4'
 # SENSOR FILES
 # =========================================================
 
+# All Sensors 
 files = [
     'bedroom_bed',
     'bedroom_glass',
@@ -118,6 +118,21 @@ files = [
 ]
 
 
+# Only Wearable Sensors 
+# files = [
+#     'Body-LLG',
+#     'Body-LSH',
+#     'Body-LTH',
+#     'Body-LUA',
+#     'Body-LW',
+#     'Body-RLG',
+#     'Body-RSH',
+#     'Body-RTH',
+#     'Body-RUA',
+#     'Body-RW',
+#     'Body-WT'
+# ]
+
 
 # =========================================================
 # FIND PARTICIPANTS
@@ -128,7 +143,7 @@ participant_days = sorted(
         os.path.join(
             dataset_path,
             'Day_*_2024-*'
-
+ 
         )
     )
 )
@@ -373,6 +388,16 @@ X_features = pd.DataFrame(X_features)
 print("\nFeature Matrix Shape:")
 print(X_features.shape)
 
+X_features[:] = np.nan_to_num(X_features)
+# X_features = X_features.astype(np.float64)
+float32_max = np.finfo(np.float32).max
+# X_features = np.where(X_features > float32_max, np.nan, X_features)
+
+X_features[X_features > float32_max] = 0
+
+X_features.replace([np.inf, -np.inf], np.nan, inplace=True)
+# Step 2: Fill those gaps with 0, a placeholder, or the column mean
+X_features.fillna(0, inplace=True) 
 # =========================================================
 # ENCODE LABELS
 # =========================================================
@@ -415,7 +440,7 @@ X_train_area, X_test_area, y_train_area, y_test_area = (
 
 # =========================================================
 # RANDOM FOREST:
-# 17 ACTIVITY RECOGNITION
+# 18 ACTIVITY RECOGNITION
 # =========================================================
 
 activity_rf = RandomForestClassifier(
@@ -450,12 +475,18 @@ activity_f1 = f1_score(
     average='weighted'
 )
 
+from sklearn.metrics import confusion_matrix
+
+cm = confusion_matrix(y_test_act, y_pred_act)
+cm_normalized = cm/cm.astype(float).sum(axis=1)
+
 print("\n================================")
 print("17 Activity Recognition Results")
 print("================================")
 
 print(f'Accuracy : {activity_accuracy:.4f}')
 print(f'F1-Score : {activity_f1:.4f}')
+print(f'Confusion matrix : {cm_normalized}')
 
 # =========================================================
 # RANDOM FOREST:
@@ -494,9 +525,13 @@ area_f1 = f1_score(
     average='weighted'
 )
 
+cm = confusion_matrix(y_test_area, y_pred_area)
+cm_normalized = cm/cm.astype(float).sum(axis=1)
+
 print("\n==============================")
-print("4 Area Recognition Results")
+print("4 Functional Area Recognition Results")
 print("==============================")
 
 print(f'Accuracy : {area_accuracy:.4f}')
 print(f'F1-Score : {area_f1:.4f}')
+print(f'Confusion matrix : {cm_normalized}')
