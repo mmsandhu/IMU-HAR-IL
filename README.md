@@ -165,8 +165,7 @@ IMU data:
 
 **Link to Data:**
 
-https://doi.org/10.25919/85j1-6z03 
-
+https://doi.org/10.25919/d7xf-n080 
 
 **Please cite the relevant work.**
 
